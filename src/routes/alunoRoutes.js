@@ -1,6 +1,5 @@
 const express = require("express");
 const alunoController = require("../controllers/AlunoController");
-console.log(alunoController);
 const validarAluno = require("../middlewares/validarAluno");
 
 const router = express.Router();
@@ -15,6 +14,7 @@ router.post("/", validarAluno, alunoController.create);
 
 router.get("/:id", alunoController.findUnique);
 router.put("/:id", alunoController.update);
+router.delete("/:id", alunoController.delete);
 
 
 
